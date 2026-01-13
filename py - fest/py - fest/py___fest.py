@@ -12,5 +12,19 @@ line_up = [
     ("syntax error", "metal", 60),
     ]
 while True:
+    time = sum(band[2] for band in line_up)
     if choice == "1":
         print(line_up)
+        print(f"total time is {time}")
+        choice = input("select an option (1-6): ")
+    elif choice == "2":
+        name = input("enter the name of the band you want to add")
+        genera = input("enter the genera of the band to add")
+        time = int(input("enter the time of the band your adding"))
+        new = (name, genera, time)
+        line_up.append(new)
+        choice = input("select an option (1-6): ")
+    elif choice == "3":
+        moved = line_up.pop
+        line_up.append(moved)
+        choice = input("select an option (1-6): ")
