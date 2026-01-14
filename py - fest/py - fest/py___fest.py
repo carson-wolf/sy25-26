@@ -27,4 +27,5 @@ while True:
     elif choice == "3":
         moved = line_up.pop
         line_up.append(moved)
+        print("moved sucsefully")
         choice = input("select an option (1-6): ")
