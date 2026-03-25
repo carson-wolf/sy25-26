@@ -22,13 +22,15 @@ enemy_size = 50
 enemy_pos = [random.randint(0, WIDTH - enemy_size), 0]
 enemy_speed = 10
 
+shake_frames = 0
+shake_intensity = 0
 
 # Store old positions for motion blur
 enemy_trail = []
 trail_length = 10  # Number of positions to store
 
 player_trail = []
-player_trail_length = 5
+player_trail_length = 15
 
 score = 0
 game_over = False
@@ -74,6 +76,8 @@ while not game_over:
         player_size += 2
         score += 1
         print(f"Score: {score}")
+
+
 
 
     # --- BUG 3: Collision Detection ---
@@ -124,3 +128,43 @@ while not game_over:
     clock.tick(30)
 
 pygame.quit()
+
+# Near miss detection (adjust threshold as needed)
+near_miss_distance = 10
+if (
+    abs(enemy_pos[0] - player_pos[0]) < player_size and  # horizontally close
+    abs(enemy_pos[1] + enemy_size - player_pos[1]) < near_miss_distance and  # just passed the player
+    enemy_pos[1] < player_pos[1]  # enemy is above or at the player
+):
+    shake_frames = 10  # number of frames to shake
+    shake_intensity = 8  # pixels to shake
+
+# Drawing
+screen.fill((0, 0, 0))
+
+# Screen shake offset
+offset_x, offset_y = 0, 0
+if shake_frames > 0:
+    offset_x = random.randint(-shake_intensity, shake_intensity)
+    offset_y = random.randint(-shake_intensity, shake_intensity)
+    shake_frames -= 1
+
+# Draw the trail (enemy)
+for i, pos in enumerate(enemy_trail):
+    fade_factor = (i + 1) / trail_length
+    alpha = int(50 * fade_factor)
+    trail_surface = pygame.Surface((enemy_size, enemy_size), pygame.SRCALPHA)
+    trail_surface.fill((255, 0, 0, alpha))
+    screen.blit(trail_surface, (pos[0] + offset_x, pos[1] + offset_y))
+
+# Draw the trail (player)
+for i, pos in enumerate(player_trail):
+    fade_factor = (i + 1) / player_trail_length
+    alpha = int(50 * fade_factor)
+    trail_surface = pygame.Surface((player_size, player_size), pygame.SRCALPHA)
+    trail_surface.fill((0, 0, 255, alpha))
+    screen.blit(trail_surface, (pos[0] + offset_x, pos[1] + offset_y))
+
+# Draw the current enemy block
+pygame.draw.rect(screen, RED, (enemy_pos[0] + offset_x, enemy_pos[1] + offset_y, enemy_size, enemy_size))
+pygame.draw.rect(screen, BLUE, (player_pos[0] + offset_x, player_pos[1] + offset_y, player_size, player_size))

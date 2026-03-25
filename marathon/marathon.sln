@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "marathon", "marathon\marathon.pyproj", "{A3B7A585-0AA1-4C0D-8423-BA3E47A83CA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3B7A585-0AA1-4C0D-8423-BA3E47A83CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B7A585-0AA1-4C0D-8423-BA3E47A83CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12C5E695-C762-4287-B790-253EF207089A}
+	EndGlobalSection
+EndGlobal

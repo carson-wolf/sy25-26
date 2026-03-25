@@ -1,25 +1,28 @@
-w = int(input("enter the weight: "))
-if w < 100:
-    g = "small"
-elif 100 <= w < 200:
-    g = "medium"
-else:
-    g = "large"
-print(g)
+a = int(input("enter a number: "))
+b = int(input("enter a number: "))
 
-l = []
-for i in range (5):
-    bl = int(input("enter blemish"))
-    l.append(bl)
-tb = sum(l)
-av = tb/5
-print(f"total blemish count is {tb}")
-print(f"average blemish is {av}")
+c = int(input("enter a number: "))
+d = int(input("enter a number: "))
 
-pot = [0,2,5,1,0,8,3,0]
-p = []
-for i in pot:
-    if i == 0:
-        p.append(i)
-per = (len(p)/len(pot)) * 100
-print(per)
+e = int(input("enter a number: "))
+f = int(input("enter a number: "))
+
+l = int(input("enter a number: "))
+m = int(input("enter a number: "))
+
+r = int(input("enter a number: "))
+s = int(input("enter a number: "))
+
+t1 =(a, b)
+t2 =(c, d)
+t3 =(e, f)
+t4 =(l, m)
+t5 =(r, s)
+
+l1 = [t1, t2, t3, t4, t5]
+print(l1)
+
+for i in range(len(l1) - 1):
+    x1, y1 = l1[i]
+    x2, y2 = l1[i + 1]
+    print(x2, y2)

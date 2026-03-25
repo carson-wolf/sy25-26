@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "march madness", "march madness\march madness.pyproj", "{20EB1E5C-DF4C-4192-8C51-3EB2F4F18338}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20EB1E5C-DF4C-4192-8C51-3EB2F4F18338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EB1E5C-DF4C-4192-8C51-3EB2F4F18338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B12B619E-3AA7-4681-9BD0-3C0BA9376D4F}
+	EndGlobalSection
+EndGlobal
